@@ -22,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="dbs.py" />
+    <Compile Include="dex_processer.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="diva_mouth_to_mmd_csv.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

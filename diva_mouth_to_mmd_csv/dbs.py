@@ -1,11 +1,11 @@
-command_lengths_f = [
+command_lengths_ft = [
     0,  # END
     1,  # TIME
     4,  # MIKU_MOVE
     2,  # MIKU_ROT
     2,  # MIKU_DISP
     2,  # MIKU_SHADOW
-    11,  # TARGET
+    7,  # TARGET
     4,  # SET_MOTION
     2,  # SET_PLAYDATA
     6,  # EFFECT
@@ -83,10 +83,32 @@ command_lengths_f = [
     24,  # EDIT_CAMERA
     1,  # EDIT_MODE_SELECT
     2,  # PV_END_FADEOUT
-    2,  # PV_END_FADEOUT
+    1,  # TARGET_FLAG
+    3,  # ITEM_ANIM_ATTACH
+    1,  # SHADOW_RANGE
+    3,  # HAND_SCALE
+    4,  # LIGHT_POS
+    1,  # FACE_TYPE
+    2,  # SHADOW_CAST
+    6,  # EDIT_MOTION_F
+    3,  # FOG
+    2,  # BLOOM
+    3,  # COLOR_COLLE
+    3,  # DOF
+    4,  # CHARA_ALPHA
+    1,  # AOTO_CAP
+    1,  # MAN_CAP
+    3,  # TOON
+    3,  # SHIMMER
+    4,  # ITEM_ALPHA
+    2,  # MOVIE_CUT_CHG
+    3,  # CHARA_LIGHT
+    3,  # STAGE_LIGHT
+    8,  # AGEAGE_CTRL
+    2,  # PSE
 ]
 
-command_to_string_f = {
+command_to_string_ft = {
     0x00: 'END',
     0x01: 'TIME',
     0x02: 'MIKU_MOVE',
@@ -171,8 +193,32 @@ command_to_string_f = {
     0x51: 'EDIT_CAMERA',
     0x52: 'EDIT_MODE_SELECT',
     0x53: 'PV_END_FADEOUT',
+    0x54: 'TARGET_FLAG',
+    0x55: 'ITEM_ANIM_ATTACH',
+    0x56: 'SHADOW_RANGE',
+    0x57: 'HAND_SCALE',
+    0x58: 'LIGHT_POS',
+    0x59: 'FACE_TYPE',
+    0x5A: 'SHADOW_CAST',
+    0x5B: 'EDIT_MOTION_F',
+    0x5C: 'FOG',
+    0x5D: 'BLOOM',
+    0x5E: 'COLOR_COLLE',
+    0x5F: 'DOF',
+    0x60: 'CHARA_ALPHA',
+    0x61: 'AOTO_CAP',
+    0x62: 'MAN_CAP',
+    0x63: 'TOON',
+    0x64: 'SHIMMER',
+    0x65: 'ITEM_ALPHA',
+    0x66: 'MOVIE_CUT_CHG',
+    0x67: 'CHARA_LIGHT',
+    0x68: 'STAGE_LIGHT',
+    0x69: 'AGEAGE_CTRL',
+    0x6A: 'PSE',
 }
-string_to_command_f = {
+
+string_to_command_ft = {
     'END': 0x00,
     'TIME': 0x01,
     'MIKU_MOVE': 0x02,
@@ -257,4 +303,27 @@ string_to_command_f = {
     'EDIT_CAMERA': 0x51,
     'EDIT_MODE_SELECT': 0x52,
     'PV_END_FADEOUT': 0x53,
+    'TARGET_FLAG': 0x54,
+    'ITEM_ANIM_ATTACH': 0x55,
+    'SHADOW_RANGE': 0x56,
+    'HAND_SCALE': 0x57,
+    'LIGHT_POS': 0x58,
+    'FACE_TYPE': 0x59,
+    'SHADOW_CAST': 0x5A,
+    'EDIT_MOTION_F': 0x5B,
+    'FOG': 0x5C,
+    'BLOOM': 0x5D,
+    'COLOR_COLLE': 0x5E,
+    'DOF': 0x5F,
+    'CHARA_ALPHA': 0x60,
+    'AOTO_CAP': 0x61,
+    'MAN_CAP': 0x62,
+    'TOON': 0x63,
+    'SHIMMER': 0x64,
+    'ITEM_ALPHA': 0x65,
+    'MOVIE_CUT_CHG': 0x66,
+    'CHARA_LIGHT': 0x67,
+    'STAGE_LIGHT': 0x68,
+    'AGEAGE_CTRL': 0x69,
+    'PSE': 0x6A,
 }
