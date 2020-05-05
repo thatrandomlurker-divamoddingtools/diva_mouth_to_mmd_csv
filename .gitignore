@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/diva_mouth_to_mmd_csv/pv_248_extreme.dsc
+/diva_mouth_to_mmd_csv/pv_266_extreme.dsc
+/diva_mouth_to_mmd_csv/out.csv
+/diva_mouth_to_mmd_csv/out.txt
+/diva_mouth_to_mmd_csv/file_in.dsc

@@ -33,53 +33,153 @@ def main_replace():
                 time = dsc_array_in[i + 1]
                 diva_to_second = time / 100000
 
-                last_time = round(diva_to_second * 30)
+                last_time = diva_to_second * 30
 
             if command == 0x13:
+                performer = dsc_array_in[i + 1]
                 mouth = dsc_array_in[i + 3]
+                size = dsc_array_in[i + 5] / 1000
 
                 if last_time is None:
                     last_time = 0
                     txt_out.write()
 
-                if mouth == 0:
-                    txt_out.write(f"A, {last_time}, 1\n")
-                    txt_out.write(f"E, {last_time}, 0\n")
-                    txt_out.write(f"I, {last_time}, 0\n")
-                    txt_out.write(f"O, {last_time}, 0\n")
-                    txt_out.write(f"U, {last_time}, 0\n")
-                elif mouth == 1:
-                    txt_out.write(f"A, {last_time}, 0\n")
-                    txt_out.write(f"E, {last_time}, 1\n")
-                    txt_out.write(f"I, {last_time}, 0\n")
-                    txt_out.write(f"O, {last_time}, 0\n")
-                    txt_out.write(f"U, {last_time}, 0\n")
-                elif mouth == 2:
-                    txt_out.write(f"A, {last_time}, 0\n")
-                    txt_out.write(f"E, {last_time}, 0\n")
-                    txt_out.write(f"I, {last_time}, 0\n")
-                    txt_out.write(f"O, {last_time}, 1\n")
-                    txt_out.write(f"U, {last_time}, 0\n")
-                elif mouth == 8 or mouth == 9:
-                    txt_out.write(f"A, {last_time}, 0\n")
-                    txt_out.write(f"E, {last_time}, 0\n")
-                    txt_out.write(f"I, {last_time}, 0\n")
-                    txt_out.write(f"O, {last_time}, 0\n")
-                    txt_out.write(f"U, {last_time}, 0\n")
-                elif mouth == 10:
-                    txt_out.write(f"A, {last_time}, 0\n")
-                    txt_out.write(f"E, {last_time}, 0\n")
-                    txt_out.write(f"I, {last_time}, 1\n")
-                    txt_out.write(f"O, {last_time}, 0\n")
-                    txt_out.write(f"U, {last_time}, 0\n")
-                elif mouth == 11:
-                    txt_out.write(f"A, {last_time}, 0\n")
-                    txt_out.write(f"E, {last_time}, 0\n")
-                    txt_out.write(f"I, {last_time}, 0\n")
-                    txt_out.write(f"O, {last_time}, 0\n")
-                    txt_out.write(f"U, {last_time}, 1\n")
+                if performer == 0:  
+                    if mouth == 0 or mouth == 24 or mouth == 34: # A
+                        txt_out.write(f"A, {last_time}, {size}\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 1 or mouth == 31 or mouth == 35 or mouth == 16 or mouth == 12 or mouth == 5: # E
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, {size}\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 2 or mouth == 36 or mouth == 25 or mouth == 3: # O
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, {size}\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 8 or mouth == 9 or mouth == 22 or mouth == 28: # RESET
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 10 or mouth == 29 or mouth == 6 or mouth == 13 or mouth == 14 or mouth == 40: # I
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, {size}\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 11 or mouth == 30 or mouth == 7: # U
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, {size}\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 4 or mouth == 17 or mouth == 27 or mouth == 15: # frown
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, {size}\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 18: # neko
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, {size}\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 21: #big smile
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, {size}\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 20: # box
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, {size}\n")
+                        txt_out.write(f"SMILE, {last_time}, 0\n")
+                        print(f"{performer}, {mouth}")
+                    elif mouth == 23: # smile
+                        txt_out.write(f"A, {last_time}, 0\n")
+                        txt_out.write(f"E, {last_time}, 0\n")
+                        txt_out.write(f"I, {last_time}, 0\n")
+                        txt_out.write(f"O, {last_time}, 0\n")
+                        txt_out.write(f"U, {last_time}, 0\n")
+                        txt_out.write(f"FROWN, {last_time}, 0\n")
+                        txt_out.write(f"CAT_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BIG_SMILE, {last_time}, 0\n")
+                        txt_out.write(f"BOX, {last_time}, 0\n")
+                        txt_out.write(f"SMILE, {last_time}, {size}\n")
+                        print(f"{performer}, {mouth}")
+                    else:
+                        pass
                 else:
-                    continue
+                    pass
 
             # get properties of the input command
             input_param_cnt = dbs.command_lengths_f[command]
@@ -135,6 +235,21 @@ def replace_with_jap():
                 outf.write(newl)
             if line.startswith('U'):
                 newl = line.replace('U', 'う')
+                outf.write(newl)
+            if line.startswith('FROWN'):
+                newl = line.replace('FROWN', 'ん')
+                outf.write(newl)
+            if line.startswith('CAT_SMILE'):
+                newl = line.replace('CAT_SMILE', 'ω')
+                outf.write(newl)
+            if line.startswith('BIG_SMILE'):
+                newl = line.replace('BIG_SMILE', 'ワ')
+                outf.write(newl)
+            if line.startswith('BOX'):
+                newl = line.replace('BOX', '□')
+                outf.write(newl)
+            if line.startswith('SMILE'):
+                newl = line.replace('SMILE', 'にっこり')
                 outf.write(newl)
 
 def final_touches():
